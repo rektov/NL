@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  windows-app:
+    name: Windows app (MSVC) + tests
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake --preset default
+      - name: Build (Release)
+        run: cmake --build --preset release
+      - name: Run tests
+        run: ctest --preset default
+      - name: Upload executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: NL-exe
+          path: build/Release/NL.exe
+
+  logic-tests-linux:
+    name: Logic tests (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake --preset tests
+      - name: Build
+        run: cmake --build --preset tests -j
+      - name: Run tests
+        run: ctest --preset tests
+
+  format:
+    name: clang-format check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install clang-format
+        run: sudo apt-get update && sudo apt-get install -y clang-format
+      - name: Check formatting
+        run: |
+          files=$(find src tests tools -name '*.cpp' -o -name '*.h' | \
+            grep -v -e 'src/Fonts.cpp' -e 'src/Embedded' -e 'BlurShaders.h')
+          clang-format --dry-run -Werror $files

@@ -1,0 +1,137 @@
+[
+    {
+        "branches": [
+            {
+                "build_date": 1747003260,
+                "changelog": [
+                    {
+                        "changelog": "- Improved Rage Aimbot precision on moving targets\n- Improved overwall stability in Mirage / Inferno\n- Reworked Hitbox visualization (cleaner outlines)\n- Multipoint & Point Scale tuning for AWP / Scout",
+                        "date": 1747043260
+                    },
+                    {
+                        "changelog": "- Better enemy prioritization in cluttered fights\n- Reduced false autostop on stairs\n- Misc crash & hitch fixes from May cycle\n- Inventory sync after GC reconnect",
+                        "date": 1746432000
+                    },
+                    {
+                        "changelog": "- Softened default rage presets for MM\n- ESP occlusion pass polish\n- Config migrate for new multipoint keys\n- Docs: Load / branch picker notes",
+                        "date": 1745827200
+                    }
+                ],
+                "id": "release",
+                "lastlaunch": 1786148046,
+                "name": "Release",
+                "version": ""
+            },
+            {
+                "build_date": 1747804800,
+                "changelog": [
+                    {
+                        "changelog": "- Experimental multipoint rewrite (opt-in)\n- New prediction sandbox for peek timing\n- Nightly-only debug overlay (F8)\n- Early anti-aim condition editor",
+                        "date": 1747891200
+                    },
+                    {
+                        "changelog": "- Temp: disabled shared ESP cache (stability)\n- Logging hooks for resolver misses\n- Known: higher CPU on 128-tick servers\n- Hotfix: unload crash on map change",
+                        "date": 1747353600
+                    },
+                    {
+                        "changelog": "- Prototype defensive AA for pistols\n- Faster config hot-reload\n- Extra asserts stripped from shipping path\n- Note: not for premier / faceit",
+                        "date": 1746748800
+                    }
+                ],
+                "id": "nightly",
+                "lastlaunch": 1786068349,
+                "name": "Nightly",
+                "version": "1.3.0"
+            },
+            {
+                "build_date": 1745884800,
+                "changelog": [
+                    {
+                        "changelog": "- Beta channel for next Release candidate\n- Softer rage defaults for matchmaking\n- New inventory sync after GC hiccups\n- UI: branch picker polish",
+                        "date": 1745971200
+                    },
+                    {
+                        "changelog": "- Fixed skin changer preview desync\n- Changelog dates now per-branch\n- Prep work for summer map pool\n- Safer unload during demo playback",
+                        "date": 1745366400
+                    }
+                ],
+                "id": "beta",
+                "lastlaunch": 1782000000,
+                "name": "Beta",
+                "version": ""
+            }
+        ],
+        "cheat": "cs2",
+        "license": 1788003260,
+        "name": "Counter-Strike 2",
+        "selected_branch": "release"
+    },
+    {
+        "branches": [
+            {
+                "build_date": 1679000000,
+                "changelog": [
+                    {
+                        "changelog": "- Fixed random crashes in long DM sessions\n- Resolver: fewer wrong sides on low-FOV targets\n- FPS drops when opening scoreboard — fixed\n- AutoPeek no longer sticks after buy round",
+                        "date": 1665365220
+                    },
+                    {
+                        "changelog": "- Antiaim conditions: cleaner duck / slowwalk rules\n- FakeLag refinement under packet loss\n- AutoStop consistency on ice / stairs\n- Shop edge-case fixes",
+                        "date": 1664750400
+                    },
+                    {
+                        "changelog": "- Legacy maintenance pass\n- Backported Autostop edge-case fix\n- Safer unload during map change\n- Docs: API samples refreshed",
+                        "date": 1664145600
+                    }
+                ],
+                "id": "release",
+                "lastlaunch": 1786147100,
+                "name": "Release",
+                "version": ""
+            },
+            {
+                "build_date": 1679284440,
+                "changelog": [
+                    {
+                        "changelog": "- Nightly resolver experiments (triple-scan)\n- New lag-comp debug markers\n- Prototype defensive AA for pistols\n- Faster config hot-reload",
+                        "date": 1679356800
+                    },
+                    {
+                        "changelog": "- Temp ESP occlusion pass (may flicker)\n- Extra asserts removed from shipping path\n- Note: not for premier / faceit\n- Logging for resolver miss clusters",
+                        "date": 1678752000
+                    },
+                    {
+                        "changelog": "- Early prediction sandbox\n- Debug overlay toggle (F8)\n- Known: higher CPU on 128-tick\n- Hotfix: demo unload race",
+                        "date": 1678147200
+                    }
+                ],
+                "id": "nightly",
+                "lastlaunch": 1754490000,
+                "name": "Nightly",
+                "version": "3.3"
+            },
+            {
+                "build_date": 1677628800,
+                "changelog": [
+                    {
+                        "changelog": "- Legacy CS:GO maintenance build\n- Backported Autostop edge-case fix\n- Safer unload during map change\n- Shop / inventory edge fixes",
+                        "date": 1677715200
+                    },
+                    {
+                        "changelog": "- No new rage features this cycle\n- Docs: API samples refreshed\n- Config migrate for old AA keys\n- Minor ESP color polish",
+                        "date": 1677110400
+                    }
+                ],
+                "id": "stable",
+                "lastlaunch": 1748000000,
+                "name": "Stable",
+                "version": ""
+            }
+        ],
+        "cheat": "csgo",
+        "license": 0,
+        "lifetime": true,
+        "name": "Counter-Strike: Global Offensive",
+        "selected_branch": "release"
+    }
+]

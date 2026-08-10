@@ -1,0 +1,38 @@
+NL Loader
+Copyright (c) 2026 yowls
+This product is licensed under the MIT License (see LICENSE).
+
+This product bundles third-party components. Their licenses are reproduced
+alongside the vendored source and summarized below.
+
+--------------------------------------------------------------------------------
+Dear ImGui (project fork)
+  Path:    vendor/imgui/
+  License: MIT — vendor/imgui/LICENSE.txt
+  Copyright (c) 2014-2024 Omar Cornut
+
+nlohmann/json
+  Path:    vendor/nlohmann/
+  License: MIT — vendor/nlohmann/LICENSE.MIT
+  Copyright (c) 2013-2022 Niels Lohmann
+
+stb_image
+  Path:    vendor/stb/stb_image.h
+  License: Public Domain OR MIT — vendor/stb/LICENSE
+  Copyright (c) 2017 Sean Barrett
+
+doctest (tests only, not shipped in the app binary)
+  Path:    vendor/doctest/doctest.h
+  License: MIT — vendor/doctest/LICENSE.txt
+  Copyright (c) 2016-2023 Viktor Kirilov
+
+--------------------------------------------------------------------------------
+Inter (default UI font)
+  Path:    vendor/fonts/inter/ (Inter-Medium.ttf, Inter-Black.ttf)
+           embedded via src/FontsFree.cpp (tools/gen_fonts.py)
+  License: SIL Open Font License 1.1 — vendor/fonts/inter/LICENSE.txt
+  Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter)
+
+Museo Sans — not in this repo (commercial / proprietary).
+  Local opt-in only: gitignored src/Fonts.cpp + -DNL_USE_MUSEO=ON.
+  Not covered by this repository's MIT license.
