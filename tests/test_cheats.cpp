@@ -158,8 +158,8 @@ TEST_CASE("CheatInfo: ActiveBranch fallbacks and IsActive") {
     nl::data::CheatInfo info;
     CHECK(info.ActiveBranch() == nullptr);
 
-    info.branches.push_back({.id = "a"});
-    info.branches.push_back({.id = "b"});
+    info.branches.emplace_back().id = "a";
+    info.branches.emplace_back().id = "b";
     info.selectedBranch = "missing";
     REQUIRE(info.ActiveBranch() != nullptr);
     CHECK(info.ActiveBranch()->id == "a");
