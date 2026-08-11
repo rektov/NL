@@ -17,7 +17,7 @@ jobs:
       - name: Run tests
         run: ctest --preset default
       - name: Upload executable
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: NL-exe
           path: build/Release/NL.exe
