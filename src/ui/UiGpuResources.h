@@ -45,4 +45,4 @@ struct UiGpuResources {
 void ReleaseTextures(UiGpuResources& gpu);
 void LoadTextures(UiGpuResources& gpu, ID3D11Device* device, ID3D11DeviceContext* ctx);
 
-}
+} // namespace nl::ui

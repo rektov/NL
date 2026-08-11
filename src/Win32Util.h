@@ -47,4 +47,4 @@ template <class Fn> [[nodiscard]] Fn GetProcAddressAs(HMODULE mod, const char* n
     return reinterpret_cast<INT_PTR>(hi) > 32;
 }
 
-}
+} // namespace nl

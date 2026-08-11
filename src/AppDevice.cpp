@@ -130,4 +130,4 @@ PresentResult AppDevice::Present(UINT syncInterval) {
     return PresentResult::Ok;
 }
 
-}
+} // namespace nl

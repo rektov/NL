@@ -179,8 +179,7 @@ void AppFrame::ProcessModalActions(ui::ModalActions& act, time_t now) {
     if (act.persistSelectedBranch) {
         if (auto* c = store_.Find(act.selectedCheatId)) {
             c->selectedBranch = act.selectedBranchId;
-            if (!ui_.modal.open)
-                ui::FillDisplayedBranch(ui_, *c, now);
+            if (!ui_.modal.open) ui::FillDisplayedBranch(ui_, *c, now);
         }
         if (!store_.SaveSelectedBranch(act.selectedCheatId, act.selectedBranchId))
             Log("Failed to persist selected branch for {}", act.selectedCheatId);
@@ -311,4 +310,4 @@ bool AppFrame::TickFrame(AppWindow& window, AppDevice& device, bool& running) {
     return true;
 }
 
-}
+} // namespace nl

@@ -19,7 +19,7 @@ time_t MakeUtc(int year, int month, int day, int hour, int minute, int second = 
 #endif
 }
 
-}
+} // namespace
 
 TEST_CASE("FormatDate: sentinel and calendar buckets") {
     const time_t now = MakeUtc(2026, 8, 10, 12, 0);

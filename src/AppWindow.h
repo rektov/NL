@@ -54,4 +54,4 @@ class AppWindow {
     POINT dragOrigin_{};
 };
 
-}
+} // namespace nl

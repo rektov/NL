@@ -65,4 +65,4 @@ class Blur {
     bool cacheValid_ = false;
 };
 
-}
+} // namespace nl::gfx

@@ -27,4 +27,4 @@ float SmoothScroll(float current, float target, float& velocity, float dt, float
 void TickScroll(ScrollState& s, float maxScroll, float wheelDelta, bool allowWheel, float dt,
                 std::uint64_t now, float wheelSpeed = 60.f);
 
-}
+} // namespace nl::ui

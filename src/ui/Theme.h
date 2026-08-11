@@ -83,4 +83,4 @@ inline void ApplyTheme(ImGuiStyle& style, const Theme& theme) {
     c[ImGuiCol_SliderGrabActive] = theme.link;
 }
 
-}
+} // namespace nl::ui

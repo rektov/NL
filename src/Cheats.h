@@ -53,4 +53,4 @@ struct CheatStore {
 [[nodiscard]] bool UpdateSelectedBranchJson(nlohmann::json& data, std::string_view cheatId,
                                             std::string_view branchId);
 
-}
+} // namespace nl::data

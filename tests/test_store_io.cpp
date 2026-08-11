@@ -39,7 +39,7 @@ struct TempStoreDir {
     }
 };
 
-};
+}; // namespace
 
 TEST_CASE("Load seeds the user file from the embedded catalog on first run") {
     TempStoreDir tmp;
@@ -124,7 +124,8 @@ TEST_CASE("An oversized user file is ignored and reseeded") {
     {
         std::ofstream out(tmp.StorePath(), std::ios::binary);
         const std::string chunk(1024 * 1024, ' ');
-        for (int i = 0; i < 9; ++i) out << chunk;
+        for (int i = 0; i < 9; ++i)
+            out << chunk;
     }
 
     CheatStore store;

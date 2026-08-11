@@ -200,8 +200,7 @@ bool WriteJsonFile(const std::filesystem::path& path, const json& data) {
     }
     std::error_code rmEc;
     fs::remove(tmp, rmEc);
-    Log("Atomic JSON rename failed ({} -> {}): {}", tmp.string(), path.string(),
-        finalEc.message());
+    Log("Atomic JSON rename failed ({} -> {}): {}", tmp.string(), path.string(), finalEc.message());
     return false;
 }
 
@@ -243,7 +242,7 @@ json EnsureUserJson() {
     return data;
 }
 
-}
+} // namespace
 
 const BranchInfo* CheatInfo::ActiveBranch() const {
     const auto it = std::ranges::find(branches, selectedBranch, &BranchInfo::id);
@@ -371,4 +370,4 @@ const CheatInfo* CheatStore::Find(std::string_view id) const {
     return it == items.end() ? nullptr : std::addressof(*it);
 }
 
-}
+} // namespace nl::data

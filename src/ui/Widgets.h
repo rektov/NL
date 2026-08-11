@@ -59,4 +59,4 @@ class ScopedTextColor {
     ScopedTextColor& operator=(ScopedTextColor&&) = delete;
 };
 
-}
+} // namespace nl::ui

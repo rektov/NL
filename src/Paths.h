@@ -19,4 +19,4 @@ inline void SetUserDataDirOverride(std::filesystem::path path) {
     return UserDataDir() / "cheats.json";
 }
 
-}
+} // namespace nl

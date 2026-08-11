@@ -33,4 +33,4 @@ inline GameArt ArtForGameId(std::string_view id) {
     return GameArt::Cs2;
 }
 
-}
+} // namespace nl::ui

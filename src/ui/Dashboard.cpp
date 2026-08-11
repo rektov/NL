@@ -277,8 +277,7 @@ void DrawWindowChrome(ImDrawList* dl, Theme& theme, UiState& ui, float contentAl
     ImGui::PopStyleVar();
 }
 
-void DrawModalDim(ImDrawList* dl, const ModalState& modal, int winW, int winH,
-                  std::uint64_t now) {
+void DrawModalDim(ImDrawList* dl, const ModalState& modal, int winW, int winH, std::uint64_t now) {
     if (!modal.open && !modal.closing) return;
     const float modalT =
         modal.closing
@@ -289,7 +288,7 @@ void DrawModalDim(ImDrawList* dl, const ModalState& modal, int winW, int winH,
                       ImGui::GetColorU32(ImVec4(0, 0, 0, dimA)));
 }
 
-}
+} // namespace
 
 void DrawDashboard(Theme& theme, UiState& ui, const UiGpuResources& gpu, data::CheatStore& store,
                    float contentAlpha, const FrameInput& frame, DashActions& out) {
@@ -453,4 +452,4 @@ void DrawDashboard(Theme& theme, UiState& ui, const UiGpuResources& gpu, data::C
     ImGui::End();
 }
 
-}
+} // namespace nl::ui

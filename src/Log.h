@@ -15,4 +15,4 @@ template <class... Args> void Log(std::format_string<Args...> fmt, Args&&... arg
     LogWrite(std::format(fmt, std::forward<Args>(args)...));
 }
 
-}
+} // namespace nl

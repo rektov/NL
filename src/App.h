@@ -23,4 +23,4 @@ class App {
     std::unique_ptr<Impl> impl_;
 };
 
-}
+} // namespace nl

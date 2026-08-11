@@ -18,7 +18,8 @@
       "displayName": "Logic tests (any OS)",
       "binaryDir": "${sourceDir}/build-tests",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "NL_BUILD_APP": "OFF"
       }
     }
   ],

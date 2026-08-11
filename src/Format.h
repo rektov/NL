@@ -93,4 +93,4 @@ inline std::string FormatSubscriptionStatus(bool active, bool lifetime, time_t l
     return std::format("Expires in {}s", rem);
 }
 
-}
+} // namespace nl

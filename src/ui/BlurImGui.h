@@ -11,4 +11,4 @@ namespace nl::ui {
 void BlitBlurSolid(gfx::Blur& blur, ImDrawList* dl, float x0, float y0, float x1, float y1,
                    float alpha, float dispW, float dispH, float rounding);
 
-}
+} // namespace nl::ui

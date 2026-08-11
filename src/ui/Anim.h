@@ -161,4 +161,4 @@ inline void BeginExit(AnimState& a) {
     a.exitFromAlpha = a.windowAlpha;
 }
 
-}
+} // namespace nl::ui

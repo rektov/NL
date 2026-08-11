@@ -32,7 +32,7 @@ StbiImage DecodeRgba(const void* data, std::size_t dataSize, int& w, int& h, con
     return img;
 }
 
-}
+} // namespace
 
 bool LoadTextureFromMemory(const void* data, std::size_t dataSize, ID3D11Device* device,
                            ComPtr<ID3D11ShaderResourceView>& outSrv, TextureDims* outDims) {
@@ -151,4 +151,4 @@ bool LoadCircularTextureFromMemory(const void* data, std::size_t dataSize, ID3D1
     return true;
 }
 
-}
+} // namespace nl::gfx

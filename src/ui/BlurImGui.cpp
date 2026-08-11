@@ -11,7 +11,7 @@ void OnBlurBegin(const ImDrawList*, const ImDrawCmd* cmd) {
     blur->ExecutePending();
 }
 
-}
+} // namespace
 
 bool QueueBlurCapture(gfx::Blur& blur, ImDrawList* dl, bool dirty) {
     if (!dl || !blur.QueueCapture(dirty)) return false;
@@ -34,4 +34,4 @@ void BlitBlurSolid(gfx::Blur& blur, ImDrawList* dl, float x0, float y0, float x1
                         IM_COL32(255, 255, 255, static_cast<int>(alpha * 255.f + 0.5f)), rounding);
 }
 
-}
+} // namespace nl::ui

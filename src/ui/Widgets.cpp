@@ -48,4 +48,4 @@ void DrawScrollBar(ImDrawList* dl, const ScrollState& s, float maxScroll, float 
                       ColorA(accent, s.scrollbarAlpha * alphaMul), kRounding);
 }
 
-}
+} // namespace nl::ui

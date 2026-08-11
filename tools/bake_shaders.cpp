@@ -26,8 +26,10 @@ static bool Bake(FILE* out, const char* name, const char* src, const char* targe
     for (size_t i = 0; i < n; ++i) {
         if ((i % 12) == 0) fputs("    ", out);
         fprintf(out, "0x%02X,", bytes[i]);
-        if ((i % 12) == 11 || i + 1 == n) fputc('\n', out);
-        else fputc(' ', out);
+        if ((i % 12) == 11 || i + 1 == n)
+            fputc('\n', out);
+        else
+            fputc(' ', out);
     }
     fprintf(out, "};\nstatic const size_t %sSize = %zu;\n\n", name, n);
     blob->Release();
@@ -117,20 +119,19 @@ static const char kImguiVs[] =
     "  return output;"
     "}";
 
-static const char kImguiPs[] =
-    "struct PS_INPUT"
-    "{"
-    "float4 pos : SV_POSITION;"
-    "float4 col : COLOR0;"
-    "float2 uv  : TEXCOORD0;"
-    "};"
-    "sampler sampler0;"
-    "Texture2D texture0;"
-    "float4 main(PS_INPUT input) : SV_Target"
-    "{"
-    "float4 out_col = input.col * texture0.Sample(sampler0, input.uv);"
-    "return out_col;"
-    "}";
+static const char kImguiPs[] = "struct PS_INPUT"
+                               "{"
+                               "float4 pos : SV_POSITION;"
+                               "float4 col : COLOR0;"
+                               "float2 uv  : TEXCOORD0;"
+                               "};"
+                               "sampler sampler0;"
+                               "Texture2D texture0;"
+                               "float4 main(PS_INPUT input) : SV_Target"
+                               "{"
+                               "float4 out_col = input.col * texture0.Sample(sampler0, input.uv);"
+                               "return out_col;"
+                               "}";
 
 int main(int argc, char** argv) {
     if (argc < 3) {
@@ -141,9 +142,9 @@ int main(int argc, char** argv) {
     FILE* blur = nullptr;
     if (fopen_s(&blur, argv[1], "wb") != 0 || !blur) return 1;
     fputs("#pragma once\n#include <cstddef>\n\nnamespace nl::gfx::shaders {\n\n", blur);
-    bool ok = Bake(blur, "kVsBytecode", kBlurVs, "vs_5_0")
-           && Bake(blur, "kDownsampleBytecode", kBlurDownsample, "ps_4_0")
-           && Bake(blur, "kBlurBytecode", kBlurPs, "ps_4_0");
+    bool ok = Bake(blur, "kVsBytecode", kBlurVs, "vs_5_0") &&
+              Bake(blur, "kDownsampleBytecode", kBlurDownsample, "ps_4_0") &&
+              Bake(blur, "kBlurBytecode", kBlurPs, "ps_4_0");
     fputs("}\n", blur);
     fclose(blur);
     if (!ok) return 1;
@@ -151,8 +152,8 @@ int main(int argc, char** argv) {
     FILE* imgui = nullptr;
     if (fopen_s(&imgui, argv[2], "wb") != 0 || !imgui) return 1;
     fputs("#pragma once\n#include <cstddef>\n\nnamespace nl::imgui_shaders {\n\n", imgui);
-    ok = Bake(imgui, "kVsBytecode", kImguiVs, "vs_4_0")
-      && Bake(imgui, "kPsBytecode", kImguiPs, "ps_4_0");
+    ok = Bake(imgui, "kVsBytecode", kImguiVs, "vs_4_0") &&
+         Bake(imgui, "kPsBytecode", kImguiPs, "ps_4_0");
     fputs("}\n", imgui);
     fclose(imgui);
     return ok ? 0 : 1;

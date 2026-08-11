@@ -34,7 +34,7 @@ std::filesystem::path PlatformDataRoot() {
 #endif
 }
 
-}
+} // namespace
 
 std::filesystem::path UserDataDir() {
     if (!UserDataDirOverride().empty()) return UserDataDirOverride();
@@ -47,4 +47,4 @@ std::filesystem::path UserDataDir() {
     return dir;
 }
 
-}
+} // namespace nl

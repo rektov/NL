@@ -102,11 +102,9 @@ void TickInject(UiState& ui, std::uint64_t now) {
         ui.inject.modalW = kInjectW;
         ui.inject.modalH = kInjectH;
         const float local = static_cast<float>(elapsed - shrinkEnd);
-        ui.inject.logoAlpha =
-            EaseInOutCubic(std::min(1.f, local / static_cast<float>(kFadeInMs)));
+        ui.inject.logoAlpha = EaseInOutCubic(std::min(1.f, local / static_cast<float>(kFadeInMs)));
         ui.inject.contentAlpha = 0.f;
-        ui.inject.progress =
-            EaseOutExpand(std::min(1.f, local / static_cast<float>(kProgressMs)));
+        ui.inject.progress = EaseOutExpand(std::min(1.f, local / static_cast<float>(kProgressMs)));
     } else {
         ui.requestExit = true;
         ui.inject.active = false;
@@ -560,7 +558,7 @@ std::string BranchLabel(const data::BranchInfo& b) {
     return b.name + " v" + b.version;
 }
 
-}
+} // namespace
 
 void FillDisplayedBranch(UiState& ui, const data::CheatInfo& info, time_t now) {
     const data::BranchInfo* b = info.ActiveBranch();
@@ -712,4 +710,4 @@ void DrawGameModal(Theme& theme, UiState& ui, const UiGpuResources& gpu, data::C
     }
 }
 
-}
+} // namespace nl::ui

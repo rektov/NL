@@ -19,7 +19,7 @@ void Settle(ScrollState& s, float maxScroll, float seconds, std::uint64_t& now) 
     }
 }
 
-}
+} // namespace
 
 TEST_CASE("Clamp01 and easing endpoints") {
     CHECK(nl::ui::Clamp01(-1.f) == 0.f);
@@ -76,7 +76,8 @@ TEST_CASE("Boot animation walks Splash -> Expanding -> Ready") {
     CHECK(a.winH == a.targetH);
     CHECK(a.loaderAlpha == 0.f);
 
-    for (int i = 0; i < 60; ++i) nl::ui::TickAnim(a, kDt);
+    for (int i = 0; i < 60; ++i)
+        nl::ui::TickAnim(a, kDt);
     CHECK(a.contentAlpha == doctest::Approx(1.f));
     CHECK(a.windowAlpha == doctest::Approx(1.f));
 }

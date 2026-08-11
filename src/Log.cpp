@@ -23,8 +23,7 @@ constexpr std::string_view kPrefix = "[NL] ";
 std::string SystemMessage(HRESULT hr) {
     wchar_t* buffer = nullptr;
     const DWORD length = FormatMessageW(
-        FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM |
-            FORMAT_MESSAGE_IGNORE_INSERTS,
+        FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
         nullptr, static_cast<DWORD>(hr), 0, reinterpret_cast<LPWSTR>(&buffer), 0, nullptr);
     if (length == 0 || !buffer) {
         if (buffer) LocalFree(buffer);
@@ -32,7 +31,8 @@ std::string SystemMessage(HRESULT hr) {
     }
 
     std::wstring_view wide(buffer, length);
-    while (!wide.empty() && (wide.back() == L'\r' || wide.back() == L'\n')) wide.remove_suffix(1);
+    while (!wide.empty() && (wide.back() == L'\r' || wide.back() == L'\n'))
+        wide.remove_suffix(1);
 
     std::string narrow;
     narrow.reserve(wide.size());
@@ -61,7 +61,7 @@ void AppendDebugFile(std::string_view line) {
 }
 #endif
 
-}
+} // namespace
 
 void LogWrite(std::string_view line) {
     std::string message;
@@ -86,4 +86,4 @@ void LogHr(std::string_view what, long hr) {
 }
 #endif
 
-}
+} // namespace nl

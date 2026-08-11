@@ -12,11 +12,10 @@ constexpr float kRestVelocity = 0.01f;
 constexpr std::uint64_t kScrollIdleMs = 600;
 
 bool Settled(const ScrollState& s) {
-    return std::fabs(s.velocity) < kRestVelocity &&
-           std::fabs(s.current - s.target) < kSnapDistance;
+    return std::fabs(s.velocity) < kRestVelocity && std::fabs(s.current - s.target) < kSnapDistance;
 }
 
-}
+} // namespace
 
 float SmoothScroll(float current, float target, float& velocity, float dt, float stiffness,
                    float damping) {
@@ -71,4 +70,4 @@ void TickScroll(ScrollState& s, float maxScroll, float wheelDelta, bool allowWhe
     s.scrollbarAlpha += (targetSb - s.scrollbarAlpha) * 10.f * dt;
 }
 
-}
+} // namespace nl::ui

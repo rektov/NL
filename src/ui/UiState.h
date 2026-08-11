@@ -128,4 +128,4 @@ void DrawDashboard(Theme& theme, UiState& ui, const UiGpuResources& gpu, data::C
 void DrawGameModal(Theme& theme, UiState& ui, const UiGpuResources& gpu, data::CheatStore& store,
                    const FrameInput& frame, ModalActions& out);
 
-}
+} // namespace nl::ui

@@ -7,7 +7,7 @@ on:
 jobs:
   windows-app:
     name: Windows app (MSVC) + tests
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
       - name: Configure
@@ -24,15 +24,15 @@ jobs:
 
   logic-tests-linux:
     name: Logic tests (Linux)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Configure
-        run: cmake --preset tests
+        run: cmake --preset tests -DCMAKE_CXX_COMPILER=g++
       - name: Build
-        run: cmake --build --preset tests -j
+        run: cmake --build --preset tests --parallel $(nproc)
       - name: Run tests
-        run: ctest --preset tests
+        run: ctest --preset tests --output-on-failure
 
   format:
     name: clang-format check

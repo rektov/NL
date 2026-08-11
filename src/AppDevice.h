@@ -48,4 +48,4 @@ class AppDevice {
     int height_ = 0;
 };
 
-}
+} // namespace nl

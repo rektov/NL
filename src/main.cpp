@@ -14,8 +14,7 @@ namespace {
 void EnableDpiAwareness() {
     if (const HMODULE user32 = GetModuleHandleW(L"user32.dll")) {
         using SetCtxFn = BOOL(WINAPI*)(HANDLE);
-        const auto setCtx =
-            nl::GetProcAddressAs<SetCtxFn>(user32, "SetProcessDpiAwarenessContext");
+        const auto setCtx = nl::GetProcAddressAs<SetCtxFn>(user32, "SetProcessDpiAwarenessContext");
         if (setCtx && setCtx(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2)) return;
     }
 
@@ -30,7 +29,7 @@ void EnableDpiAwareness() {
     SetProcessDPIAware();
 }
 
-}
+} // namespace
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int) {
     EnableDpiAwareness();

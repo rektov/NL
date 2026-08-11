@@ -63,4 +63,4 @@ class AppFrame {
     float timeSec_ = 0.f;
 };
 
-}
+} // namespace nl

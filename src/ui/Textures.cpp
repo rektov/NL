@@ -52,4 +52,4 @@ void DrawSplash(Theme& theme, float timeSec, float loaderAlpha) {
     ImGui::End();
 }
 
-}
+} // namespace nl::ui

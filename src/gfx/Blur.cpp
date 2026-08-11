@@ -17,7 +17,7 @@ struct alignas(16) BlurInputBuffer {
     float pad[3]{};
 };
 
-}
+} // namespace
 
 bool Blur::CreateDeviceObjects(IDXGISwapChain* swap) {
     if (!device_ || !swap) {
@@ -325,4 +325,4 @@ void Blur::ExecutePending() {
     cacheValid_ = ok && effectSrv_ != nullptr;
 }
 
-}
+} // namespace nl::gfx

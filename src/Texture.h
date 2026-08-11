@@ -19,4 +19,4 @@ struct TextureDims {
     const void* data, std::size_t dataSize, ID3D11Device* device, ID3D11DeviceContext* context,
     Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>& outSrv, TextureDims* outDims = nullptr);
 
-}
+} // namespace nl::gfx

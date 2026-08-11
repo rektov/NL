@@ -103,4 +103,4 @@ void App::Shutdown() {
     a.window.Destroy(false);
 }
 
-}
+} // namespace nl
