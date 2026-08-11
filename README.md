@@ -85,6 +85,8 @@ vendor/        imgui, nlohmann/json, stb, doctest, fonts/inter
 tools/         генераторы шейдеров, ресурсов и шрифтов
 ```
 
+`cheats.jaon` сохраняется в `%LOCALAPPDATA%\NLLoader\cheats.json`.
+
 ### Лицензия
 
 [MIT](LICENSE). Шрифты и сторонние компоненты — [NOTICE](NOTICE).
@@ -149,6 +151,8 @@ tests/         unit tests
 vendor/        imgui, nlohmann/json, stb, doctest, fonts/inter
 tools/         shader, asset, and font generators
 ```
+
+`cheats.jaon` saving in `%LOCALAPPDATA%\NLLoader\cheats.json`.
 
 ### License
 
