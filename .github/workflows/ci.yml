@@ -9,7 +9,7 @@ jobs:
     name: Windows app (MSVC) + tests
     runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Configure
         run: cmake --preset default
       - name: Build (Release)
@@ -26,7 +26,7 @@ jobs:
     name: Logic tests (Linux)
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Configure
         run: cmake --preset tests -DCMAKE_CXX_COMPILER=g++
       - name: Build
@@ -38,7 +38,7 @@ jobs:
     name: clang-format check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install clang-format
         run: sudo apt-get update && sudo apt-get install -y clang-format
       - name: Check formatting
